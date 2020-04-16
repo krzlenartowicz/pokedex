@@ -1,0 +1,10 @@
+.pokemon-list {
+    margin-top: 100px;
+}
+
+
+@media only screen and (max-device-width : 768px) {
+    .pokemon-list {
+        margin-top: 440px;
+    }
+}

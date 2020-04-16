@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import './App.css';
+import NavBar from './components/NavBar';
+import PokedexView from './components/PokedexView';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { 
+    pokedexUrl:"https://pokeapi.co/api/v2/pokemon?limit=890" 
+  };
+
+  callbackFunction = (childData) => {
+      this.setState({pokedexUrl: childData});
+  };
+
+  render(){
+    return (
+      <div className="App">
+        <NavBar parentCallback = {this.callbackFunction}/>
+        <PokedexView pokedexUrl = {this.state.pokedexUrl}/>
+      </div>
+    );
+  }  
 }
 
 export default App;

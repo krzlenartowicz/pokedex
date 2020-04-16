@@ -1,0 +1,30 @@
+.pokemon-container {
+    border-radius: 25px;
+    background-color: rgb(235, 232, 232);
+    height: 60px;
+    margin: 20px;
+}
+.pokemon-container :hover{
+    color: red;
+}
+.pokemon-image {
+    height: 50px;
+    width: 50px;
+    margin: 5px 5px 5px 10px;
+}
+.pokemon-number {
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.pokemon-name {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+@media only screen and (max-device-width : 768px) {
+    .pokemon-container {
+        width: 80vw;
+    }
+}
